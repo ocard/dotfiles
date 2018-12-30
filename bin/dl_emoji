@@ -1,0 +1,14 @@
+#!/usr/bin/zsh
+
+wget -O - -q https://unicode.org/repos/cldr/tags/latest/common/annotations/en.xml   \
+    | grep "annotation "                                                            \
+    | sed -e :a -e '$!N;s/\n.*type=\"tts\"/ /;ta' -e "P;D"                          \
+    | awk -F"[\"<>]" '{print $3 " " $8 " | " $5}'                                   \
+    > ~/.emoji11
+
+wget -O - -q https://unicode.org/repos/cldr/tags/latest/common/annotationsDerived/en.xml    \
+    | grep "annotation "                                                                    \
+    | sed -e :a -e '$!N;s/\n.*type=\"tts\"/ /;ta' -e "P;D"                                  \
+    | awk -F"[\"<>]" '{print $3 " " $8 " | " $5}'                                           \
+    >> ~/.emoji11
+

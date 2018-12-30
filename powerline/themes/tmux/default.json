@@ -1,0 +1,80 @@
+{
+	"segments": {
+		"right": [
+			{
+				"function": "powerline.segments.tmux.attached_clients",
+				"priority": 10,
+				"before": "🔗",
+				"args": {"minimum": 2}
+			},
+			{
+				"function": "rain_segment.rain",
+				"priority": 50,
+				"before": ""
+			},
+			{
+				"function": "powerline.segments.common.sys.uptime",
+				"priority": 50,
+				"before": "⇑ ",
+				"args": {
+					"seconds_format": ""
+				}
+			},
+			{
+				"function": "powerline.segments.common.wthr.weather",
+				"display": false,
+				"priority": 60,
+				"name": "weather",
+				"args": {
+					"location_query": "rosario, argentina",
+					"temp_hottest": 38,
+					"temp_coldest": 26,
+					"icons": {
+						"day":           "〇 ",
+						"blustery":      "⚑ ",
+						"rainy":         "☔ ",
+						"cloudy":        "☁ ",
+						"snowy":         "❅ ",
+						"stormy":        "☈ ",
+						"foggy":         "≡ ",
+						"sunny":         "☼ ",
+						"night":         "☾ ",
+						"windy":         "☴ ",
+						"not_available": "� ",
+						"unknown":       "⚠ "
+					}
+    			}
+			},
+			{
+				"function": "powerline.segments.common.sys.cpu_load_percent",
+				"name": "cpu",
+				"before": "\uD83D\uDCBB",
+				"priority": 20
+			},
+			{
+				"function": "powerline.segments.common.bat.battery",
+				"before": "🔌",
+				"priority": 30,
+				"args": {
+					"online": "",
+					"offline": ""
+				}
+			},
+			
+			{
+				"function": "powerline.segments.common.time.date"
+			},
+			{
+				"function": "powerline.segments.common.time.date",
+				"name": "time",
+				"args": {
+					"format": "%H:%M",
+					"istime": true
+				}
+			},
+			{
+				"function": "powerline.segments.common.net.hostname"
+			}
+		]
+	}
+}

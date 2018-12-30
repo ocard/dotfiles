@@ -1,0 +1,22 @@
+#!/bin/bash
+
+wid=$(wmctrl -lx | awk '$3~/nasc.Nasc/ {print $1}')
+if [ -z "$wid" ]
+then
+	GTK_THEME=Ambiance nasc & 
+	while [ -z "$wid" ] 
+	do
+		sleep 1
+		wid=$(wmctrl -lx | awk '$3~/nasc.Nasc/ {print $1}')
+	done
+
+	wmctrl -i -r $wid -b add,above
+else
+	workspace=$(wmctrl -lx | awk '$3~/nasc.Nasc/ {print $2}')
+	if [ $workspace -eq 1 ]
+	then
+		wmctrl -i -R $wid
+	else
+		wmctrl -i -r $wid -t 1
+	fi
+fi
