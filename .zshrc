@@ -200,7 +200,7 @@ alias -g C='| xclip -selection clipboard'
 json-bat() {
   python -m json.tool $1 | bat --language="json" 
 }
-alias -s {html,cpp,c,xml,py,sh,conf,desktop,txt,code-workspace}='code'
+alias -s {html,cpp,c,xml,py,conf,desktop,txt,code-workspace}='code'
 alias -s json='json-bat'
 alias -s log='tail'
 alias -s {pdf,PDF,jpg,JPG,png,PNG}='background xdg-open'
