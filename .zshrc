@@ -1,5 +1,4 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export ZSH_TMUX_AUTOSTART=true
 
 [ -f ~/.profile ] && source ~/.profile
 [ -f ~/.api_keys ] && source ~/.api_keys
@@ -118,8 +117,8 @@ POWERLEVEL9K_FOLDER_ICON=''
 POWERLEVEL9K_ETC_ICON=''
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time)
 POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S}"
-POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR='\UE0BC'
-POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR='\UE0BA'
+POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR='\Ue0c6'
+POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR='\Ue0c7'
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor root)
 
