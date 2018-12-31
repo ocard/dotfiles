@@ -1,4 +1,4 @@
-#!/home/oc/anaconda3/bin/python
+#!/usr/bin/env python
 
 import json
 import os

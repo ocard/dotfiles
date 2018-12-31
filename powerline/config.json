@@ -1,6 +1,6 @@
 {
     "common": {
-        "log_file": "~/powerlinelog"
+        "log_file": "/tmp/powerline.log"
     },
     "ext": {
         "tmux": {
