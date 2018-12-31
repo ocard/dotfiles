@@ -206,7 +206,7 @@ alias -s {pdf,PDF,jpg,JPG,png,PNG}='background xdg-open'
 alias -s {zip,rar}='background xdg-open'
 alias -s {mp4,MP4,webm}='background xdg-open'
 
-# ALT-C: cd into the selected directory
+# ESC-C: cd into the selected directory
 # CTRL-T: Place the selected file path in the command line
 # CTRL-R: Place the selected command from history in the command line
 # CTRL-P: Place the selected process ID in the command line
