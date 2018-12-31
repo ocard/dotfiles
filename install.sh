@@ -7,8 +7,8 @@ gitmakeinstall() {
 	cd "$dir" || exit
     case "$1" in
 	    "https://github.com/trapd00r/ls--.git")     
-            cpan Term::ExtendedColor
-            perl Makefile.PL 
+            cpan Term::ExtendedColor ;
+            perl Makefile.PL ;
             ;;
         *)
             ;;
@@ -17,7 +17,7 @@ gitmakeinstall() {
 	make install &>/dev/null
     case "$1" in
 	    "https://github.com/trapd00r/ls--.git")     
-            cp ls++.conf $HOME/.ls++.conf
+            cp ls++.conf $HOME/.ls++.conf ;
             ;;
         *)
             ;;

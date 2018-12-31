@@ -188,6 +188,17 @@ ealias as="apt search"
 ealias qq="tail -100f -- /tmp/q"
 ealias qqrm="rm /tmp/q"
 
+qc(){
+  while getopts "h" opt
+  do
+      case $opt in
+      (h) "runs: git add . && git commit -m [MESSAGE] && git push origin master" ; exit 0 ;;
+      (*) printf "Illegal option '-%s'\n" "$opt" && exit 1 ;;
+      esac
+  done
+  git add . && git commit -m "$1" && git push origin master
+}
+
 ealias cat="bat"
 alias bat="bat --terminal-width=-2 --italic-text always"
 export BAT_PAGER="less -RFS"
