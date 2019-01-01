@@ -25,13 +25,15 @@ gitmakeinstall() {
 	cd /tmp || return ;}
 
 
-gitmakeinstall(https://github.com/ocard/st)
-gitmakeinstall(https://github.com/ocard/yeahconsole)
-gitmakeinstall(https://github.com/trapd00r/ls--.git)
+echo "---- installing a couple things ----"
+gitmakeinstall(https://github.com/ocard/st) && echo "st installed"
+gitmakeinstall(https://github.com/ocard/yeahconsole) && echo "yeahconsole installed"
+gitmakeinstall(https://github.com/trapd00r/ls--.git) && echo "ls++ installed"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && echo "tmux plugin manager installed"
 
+echo "---- symlinking ----"
 ln -sv ~/Dotfiles/.zshrc                            ~ 
 ln -sv ~/Dotfiles/.tmux.conf                        ~
-
 ln -sv ~/Dotfiles/bin                               ~
 ln -sv ~/Dotfiles/powerline                         ~/.config
 ln -sv ~/Dotfiles/global_gitignore                  ~/.config/git/ignore

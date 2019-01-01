@@ -43,7 +43,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -122,8 +122,9 @@ POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR='\Ue0c7'
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor root)
 
-AUTO_LS_COMMANDS=(ls '[[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == true ]] && /usr/bin/git status -s')
+AUTO_LS_COMMANDS=('/usr/bin/clear' ls '[[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == true ]] && /usr/bin/git status -s')
 auto-ls-ls () {
+  print -P $PS1
   ls -N --group-directories-first --color
 }
 
@@ -192,7 +193,7 @@ qc(){
   while getopts "h" opt
   do
       case $opt in
-      (h) "runs: git add . && git commit -m [MESSAGE] && git push origin master" ; exit 0 ;;
+      (h) echo "runs: git add . && git commit -m [MESSAGE] && git push origin master" ; return 0 ;;
       (*) printf "Illegal option '-%s'\n" "$opt" && exit 1 ;;
       esac
   done
