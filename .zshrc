@@ -1,4 +1,4 @@
-export ZSH_TMUX_AUTOSTART=true
+# export ZSH_TMUX_AUTOSTART=true
 
 [ -f ~/.profile ] && source ~/.profile
 [ -f ~/.api_keys ] && source ~/.api_keys
