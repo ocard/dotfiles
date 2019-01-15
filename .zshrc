@@ -218,6 +218,27 @@ alias -s {pdf,PDF,jpg,JPG,png,PNG}='background xdg-open'
 alias -s {zip,rar}='background xdg-open'
 alias -s {mp4,MP4,webm}='background xdg-open'
 
+# make a backup of a file
+# https://github.com/grml/grml-etc-core/blob/master/etc/zsh/zshrc
+bk() {
+	cp -a "$1" "${1}_$(date --iso-8601=seconds)"
+}
+# launch an app (https://github.com/jleclanche/dotfiles/blob/master/.zshrc)
+function launch {
+	type $1 >/dev/null || { print "$1 not found" && return 1 }
+	$@ &>/dev/null &|
+}
+alias launch="launch " # expand aliases
+# https://stackoverflow.com/questions/6250698/how-to-decode-url-encoded-string-in-shell
+# Encode with URLEncode
+function urlencode {
+	python -c "import sys; from urllib.parse import quote_plus; print(quote_plus(sys.stdin.read()))"
+}
+# Decode URLencoded string
+function urldecode {
+	python -c "import sys; from urllib.parse import unquote; print(unquote(sys.stdin.read()), end='')"
+}
+
 # ESC-C: cd into the selected directory
 # CTRL-T: Place the selected file path in the command line
 # CTRL-R: Place the selected command from history in the command line
