@@ -30,6 +30,7 @@ gitmakeinstall(https://github.com/ocard/st) && echo "st installed"
 gitmakeinstall(https://github.com/ocard/yeahconsole) && echo "yeahconsole installed"
 gitmakeinstall(https://github.com/trapd00r/ls--.git) && echo "ls++ installed"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && echo "tmux plugin manager installed"
+# gotta add fx json reader install
 
 echo "---- symlinking ----"
 ln -sv ~/Dotfiles/.zshrc                            ~ 

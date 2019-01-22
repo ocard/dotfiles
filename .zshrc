@@ -207,12 +207,15 @@ alias -g L='| bat'
 alias -g G='| grep'
 alias -g C='| xclip -selection clipboard'
 
-# prettyprints json then hands over to bat
-json-bat() {
-  python -m json.tool $1 | bat --language="json" 
+# open json with fx 
+# (it just does what (fx $1) would do if it worked on my machine)
+fxopen() {
+  file=$1
+  shift
+  cat $file | fx $@
 }
 alias -s {html,cpp,c,xml,py,conf,desktop,txt,code-workspace}='code'
-alias -s json='json-bat'
+alias -s json='fxopen'
 alias -s log='tail'
 alias -s {pdf,PDF,jpg,JPG,png,PNG}='background xdg-open'
 alias -s {zip,rar}='background xdg-open'
