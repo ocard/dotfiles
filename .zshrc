@@ -241,6 +241,9 @@ function urlencode {
 function urldecode {
 	python -c "import sys; from urllib.parse import unquote; print(unquote(sys.stdin.read()), end='')"
 }
+# transfer.sh alias
+transfer() { if [ $# -eq 0 ]; then echo -e "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi 
+tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; fi; cat $tmpfile; rm -f $tmpfile; } 
 
 # ESC-C: cd into the selected directory
 # CTRL-T: Place the selected file path in the command line
