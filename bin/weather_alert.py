@@ -41,3 +41,8 @@ def alerts():
             txt.append([li['timestamp_local'][5:16].replace('T',' '),'clear',0])
     return txt
     # print(txt)
+
+if __name__ == "__main__":
+    from tabulate import tabulate
+    lst = alerts()
+    print(tabulate(lst,headers=['TIME','DESCRIPTION','SEVERITY']))
