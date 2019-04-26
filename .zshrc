@@ -217,9 +217,9 @@ fxopen() {
 alias -s {html,cpp,c,xml,py,conf,desktop,txt,code-workspace}='code'
 alias -s json='fxopen'
 alias -s log='tail'
-alias -s {pdf,PDF,jpg,JPG,png,PNG}='background xdg-open'
-alias -s {zip,rar}='background xdg-open'
-alias -s {mp4,MP4,webm}='background xdg-open'
+alias -s {pdf,PDF,docx,jpg,JPG,png,PNG}='xdg-open'
+alias -s {zip,rar}='xdg-open'
+alias -s {mp4,MP4,webm}='xdg-open'
 
 # make a backup of a file
 # https://github.com/grml/grml-etc-core/blob/master/etc/zsh/zshrc
