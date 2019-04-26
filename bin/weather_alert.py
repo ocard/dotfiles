@@ -7,7 +7,7 @@ import os
 # if __name__ == "__main__":
 def alerts():
     # weatherbit.json should be wgotten from
-    # https://api.weatherbit.io/v2.0/forecast/hourly/?key='$WEATHERBIT_API_KEY'&ip=auto 
+    # 'https://api.weatherbit.io/v2.0/forecast/hourly/?key='$WEATHERBIT_API_KEY'&city=Santa+Fe+de+la+Vera+Cruz'
     with open(os.path.expanduser('~/.weatherbit.json'),'r') as w:
         data = json.load(w)
     
