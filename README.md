@@ -7,6 +7,4 @@ these are dotfiles for:
 * powerline (the tmux part of it)
 * ... and other things
 
-and also a couple scripts
-
-## also this is an h2 header
+definitely do not pay attention to this repo, it's pretty bad and it won't do any good to clone it
